@@ -2,9 +2,8 @@ import Post from "./components/Post";
 
 function App() {
   return <>
-    <Post />
-    <Post />
-    <Post />
+    <Post author="Yuri" body="Amazing!" />
+    <Post author="Max" body="lol!!" />
   </>
 }
 
