@@ -10,7 +10,11 @@ function Modal({ children }) {
 
   return (
     <div className={classes.backdrop} onClick={closeModalHandler}>
-      <dialog open className={classes.modal}>
+      <dialog
+        open
+        className={classes.modal}
+        onClick={(event) => event.stopPropagation()}
+      >
         {children}
       </dialog>
     </div>

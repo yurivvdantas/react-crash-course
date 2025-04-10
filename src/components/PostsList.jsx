@@ -1,24 +1,10 @@
 import Post from './Post';
 import classes from './PostsList.module.css';
 import { useLoaderData } from 'react-router-dom';
-import { useState } from 'react';
 
 function PostsList() {
-  const initialPosts = useLoaderData();
-  const [posts, setPosts] = useState(initialPosts);
-  console.log(posts);
+  const posts = useLoaderData();
 
-  function addPostsHandler(postData) {
-    fetch('http://localhost:8080/posts', {
-      method: 'POST',
-      body: JSON.stringify(postData),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    setPosts((existingPosts) => [postData, ...existingPosts]);
-  }
   return (
     <>
       {posts.length > 0 && (
